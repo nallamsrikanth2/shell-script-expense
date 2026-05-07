@@ -40,7 +40,10 @@ mysql -h "db.nsrikanth.online" -uroot -pExpenseApp@1 -e 'show databases;'
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ExpenseApp@1
+    VALIDATE $? "setup pssword"
 else
     echo -e "$Y setup already root password $N"
 fi
+
+
 
